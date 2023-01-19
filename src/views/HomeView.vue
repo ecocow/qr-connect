@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import logo from '@/assets/images/logo_white.png'
+import {onMounted} from "vue";
 // user agent device check
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 const isAndroid = /Android/i.test(navigator.userAgent)
@@ -19,6 +20,17 @@ const isChromeOS = /CrOS/i.test(navigator.userAgent)
 const isWebOS = /webOS/i.test(navigator.userAgent)
 const isBlackBerry = /BlackBerry/i.test(navigator.userAgent)
 const isBada = /Bada/i.test(navigator.userAgent)
+
+onMounted(() => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+// resize
+  window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  })
+})
 </script>
 
 <template>
@@ -41,6 +53,7 @@ const isBada = /Bada/i.test(navigator.userAgent)
   justify-content: center;
   align-items: center;
   height: 100vh;
+  height: calc(var(--var, 1vh) * 100);
   h1 {
     text-align: center;
     img {
