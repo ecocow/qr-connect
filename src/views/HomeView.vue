@@ -39,7 +39,7 @@ onMounted(() => {
       <h1><img :src="logo" alt=""></h1>
     </div>
     <div class="action-box" v-if="isMobile">
-      <a href="#">에코맵 다운받기</a>
+      <a href="https://play.google.com/store/apps/details?id=app.ecocow.ecomap">에코맵 다운받기</a>
     </div>
     <div v-else class="action-msg">
       <p>애코맵은 모바일기기에서 확인 하실 수 있습니다.</p>
