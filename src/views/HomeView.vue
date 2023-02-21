@@ -65,7 +65,7 @@ onMounted(() => {
 .action-box, .action-msg {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 50px;
   right: 0;
   padding: 20px 20px;
   * {
